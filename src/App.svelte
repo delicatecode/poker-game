@@ -1,7 +1,15 @@
 <script lang="ts">
   import svelteLogo from './assets/svelte.svg'
-    import Card from './components/Card.svelte';
+  import Card from './components/Card.svelte';
   import Counter from './lib/Counter.svelte'
+    import type { CardResponse } from './models/card';
+
+  let item: CardResponse =  {
+    suit: '♣',
+    value: '5',
+    color: '#DD5964',
+    key: '205',
+  }
 </script>
 
 <main>
@@ -19,7 +27,7 @@
     <Counter />
   </div>
 
-  <Card />
+  <Card item={item} />
 
   <p>
     Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
