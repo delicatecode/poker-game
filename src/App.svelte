@@ -1,57 +1,80 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import Card from './components/Card.svelte';
   import Counter from './lib/Counter.svelte'
-    import type { CardResponse } from './models/card';
 
-  let item: CardResponse =  {
-    suit: '♣',
-    value: '5',
-    color: '#DD5964',
-    key: '205',
-  }
 </script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <Card item={item} />
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
+<div class="gameBody">
+  <main id="mainApp">
+    <div>
+      <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> 
+        <img src="/vite.svg" class="logo" alt="Vite Logo" />
+      </a>
+    </div>
+    <h1>Vite + Svelte</h1>
+  
+    <div class="card">
+      <Counter />
+    </div>
+  </main>
+</div>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+  a:hover {
+    color: #535bf2;
   }
-  .read-the-docs {
-    color: #888;
+  
+  .gameBody {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  #mainApp {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
   }
 </style>

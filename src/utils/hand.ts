@@ -30,7 +30,7 @@ const isRoyalStraightFlush = (): boolean => {
  * @return boolean
  */
 const isStraightFlush = (): boolean => {
-  return true;
+  return isStraight() && isFlush();
 }
 
 

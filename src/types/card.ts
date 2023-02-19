@@ -1,4 +1,5 @@
 
+
 export type Card = {
   key: string;
   suit:
@@ -8,3 +9,11 @@ export type Card = {
   value:
     "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "J" | "Q" | "K" | "A" | "Joker"
 }
+
+
+export type CardSuit = {
+  key: 's' | 'c' | 'd' | 'h'
+  value: 's' | 'c' | 'd' | 'h'
+  label:
+    "♦" | "♥" | "♣" | "♠" | "";
+} & Pick<Card, 'color'>
